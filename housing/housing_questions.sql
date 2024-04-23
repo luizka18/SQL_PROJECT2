@@ -15,30 +15,16 @@ WHERE totalvalue IS NOT NULL
 ORDER BY totalvalue DESC
 LIMIT 10 
 
-/* 2. What are the most 10 valuable properties that were built after the 2000s? (totalvalue)
-*/ 
-SELECT
-      UniqueID,
-      PropertyAddress,
-      yearbuilt,
-      SaleDate,
-      totalvalue
-FROM nashville_housing
-WHERE totalvalue IS NOT NULL
-AND YearBuilt like '2%'
-ORDER BY totalvalue DESC
-LIMIT 10 
-
-/* 3.How many sold properties were each year? (yearbuilt) 
+/* 2.How many properties were sold each year? (saledate) 
 */
-SELECT yearbuilt,
+SELECT EXTRACT(YEAR FROM saledate) AS Year,
       COUNT(UniqueID) AS How_many_properties
 FROM nashville_housing
-WHERE yearbuilt is not NULL
-GROUP BY yearbuilt
-ORDER BY How_many_properties DESC 
+WHERE saledate is not NULL
+GROUP BY Year 
+ORDER BY Year ASC 
 
-/* 4.How many sold properties were from each category (landuse)?
+/* 3.How many sold properties were from each category (landuse)?
 */
 SELECT landuse,
        COUNT(UniqueID) AS Category_count
@@ -209,7 +195,7 @@ ORDER BY Category_count DESC
 ]
 */
 
-/* 5.What is the average cost of properties from every category?
+/* 4.What is the average cost of properties from every category?
 */
 
 SELECT landuse,
@@ -219,20 +205,7 @@ WHERE saleprice IS NOT NULL AND landuse IS NOT NULL
 GROUP BY landuse
 ORDER BY Average_sale_count DESC 
 
-/* 6. Which land was in the top 10 valuable lands?
-*/
-
-SELECT UniqueID,
-       landvalue,
-       acreage, 
-       PropertyAddress,
-       landuse
-FROM nashville_housing 
-WHERE landvalue is not NULL
-ORDER by landvalue DESC
-LIMIT 10
-
-/* 7.Is there an owner who sold more than one property?
+/* 5.Is there an owner who sold more than one property?
 */ 
 SELECT ownername,
        COUNT(SaleDate) AS Owner_count
@@ -266,7 +239,7 @@ ORDER BY Owner_count DESC
   }
 ]*/
 
-/* 8.What are the top 5 owners when it comes to the total amount of money they “gain”?
+/* 6.What are the top 5 owners when it comes to the total amount of money they “gain”?
 */
 SELECT ownername,
        SUM(saleprice) AS Owner_money_count
@@ -300,7 +273,7 @@ LIMIT 5
   }
 ]*/
 
-/* 9. How many properties were from each price range?
+/* 7. How many properties were from each price range?
 */ 
 
 SELECT

@@ -14,7 +14,3 @@
 FROM nashville_housing
 */
 
-```{r}
-nashville_housing <- readr::read_csv('C:\Users\ASUS\Downloads\SQL_PROJECT2\housing\Nashville Housing.csv')
-summary(nashville_housing)
-```

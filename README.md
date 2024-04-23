@@ -9,14 +9,12 @@ The project is a result of my desire for development in the domain of Data Analy
 The questions I wanted to answer through my SQL queries : 
 
 1. What were the most 10 valuable properties? *(totalvalue*)
-2. What were the most 10 valuable properties that were built after the 2000s?
-3. How many sold properties were from each year? (*yearbuilt*) + What was the average value of a sold building in a given year?
-4.  How many sold properties were from each category (*landuse*)? 
-5.  What is the average cost of properties from every category?
-6.  Which land was in the top 10 valuable lands?
-7. Is there an owner who sold more than one property? What are the top 5 owners when it comes to the amount of sold properties? 
-8. What are the top 5 owners when it comes to the total amount of money they “gain”?
-9. How many properties were from each price range?
+2. How many sold properties were from each year? (*yearbuilt*) + What was the average value of a sold building in a given year?
+3.  What is the average cost of properties from every category?
+4.  Which land was in the top 10 valuable lands?
+5. Is there an owner who sold more than one property? What are the top 5 owners when it comes to the amount of sold properties? 
+6. What are the top 5 owners when it comes to the total amount of money they “gain”?
+7. How many properties were from each price range?
 
 # Tools I Used
 The following tools allowed me to delve into the data, draw conclusions from it, and then visualize them.
